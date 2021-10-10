@@ -6,5 +6,5 @@
 
 from spiders.google_curl import GoogleCurl
 
-spider = GoogleCurl('RNG', 3)
+spider = GoogleCurl('Trump', 3)
 spider.start()
