@@ -54,7 +54,6 @@ OTHERS_LOG_LEVAL = "ERROR"  # leval
     > Note
     >
     > If an illegal interface is encountered during crawling, an exception of 'user agent -- illegal interface' will be thrown, and then the crawler task will retry until the data is successfully crawled or more than 100 times
-    
 
 
 
@@ -80,6 +79,8 @@ spider = GoogleCurl('Trump', 3)
 spider.start()
 
 ```
+
+![image-20211010170018075](C:\Users\wlz\AppData\Roaming\Typora\typora-user-images\image-20211010170018075.png)
 
 * The first parameter is the search keyword, and the second parameter is the number of pages crawled
 
