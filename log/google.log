@@ -1,0 +1,373 @@
+Thread-3|2021-10-10 15:59:40,443|parser_control.py|run|line:464|DEBUG| parser 等待任务...
+Thread-3|2021-10-10 15:59:41,454|request.py|get_response|line:328|DEBUG| 
+                -------------- GoogleCurl.parse request for ----------------
+                url  = https://www.google.com/search?q=RNG&start=0
+                method = GET
+                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows NT 5.1; U; zh-cn; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6 Opera 10.70', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
+                
+Thread-3|2021-10-10 15:59:43,510|google_curl.py|parse|line:56|ERROR| Mozilla/5.0 (Windows NT 5.1; U; zh-cn; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6 Opera 10.70--非法页面
+Thread-3|2021-10-10 15:59:43,632|parser_control.py|deal_requests|line:624|ERROR| 
+                                -------------- GoogleCurl.parse error -------------
+                                error          Mozilla/5.0 (Windows NT 5.1; U; zh-cn; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6 Opera 10.70--非法页面
+                                response       <Response [200]>
+                                deal request   {
+                            "url": "https://www.google.com/search?q=RNG&start=0",
+                            "parser_name": "GoogleCurl",
+                            "headers": {
+                                                        "User-Agent": "Mozilla/5.0 (Windows NT 5.1; U; zh-cn; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6 Opera 10.70",
+                                                        "Connection": "close"
+                            }
+}
+                                
+Thread-3|2021-10-10 15:59:43,632|parser_control.py|deal_requests|line:687|INFO| 
+                                        入库 等待重试
+                                        url     https://www.google.com/search?q=RNG&start=0
+                                        重试次数 1
+                                        最大允许重试次数 100
+Thread-3|2021-10-10 15:59:44,650|request.py|get_response|line:328|DEBUG| 
+                -------------- GoogleCurl.parse request for ----------------
+                url  = https://www.google.com/search?q=RNG&start=10
+                method = GET
+                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:2.0b8pre) Gecko/20101114 Firefox/4.0b8pre', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
+                
+Thread-3|2021-10-10 15:59:46,949|request.py|get_response|line:328|DEBUG| 
+                -------------- GoogleCurl.parse request for ----------------
+                url  = https://www.google.com/search?q=RNG&start=20
+                method = GET
+                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:2.0b7) Gecko/20100101 Firefox/4.0b7', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
+                
+Thread-2|2021-10-10 15:59:47,488|item_buffer.py|__add_item_to_db|line:306|DEBUG| 
+                -------------- item 批量入库 --------------
+                表名: spider_data
+                datas: [
+                {
+                                "title": "RNG vs. KZ | Finals Game 4 | Mid-Season Invitational - YouTube",
+                                "keyword": "RNG",
+                                "url": "https://www.youtube.com/watch?v=ZSs4grwHw18",
+                                "text": "RNG vs. KZ | Finals Game 4 | Mid-Season Invitational - YouTube2018年5月20日 · RNG vs. KZ | Finals Game 4 | Mid-Season Invitational | Royal Never Give Up vs. KING-ZONE ...时长： 1:39:18发布时间： 2018年5月20日"
+                },
+                {
+                                "title": "RNG vs DK Final Highlights ALL GAMES | MSI 2021 Grand Final",
+                                "keyword": "RNG",
+                                "url": "https://www.youtube.com/watch?v=xHKfS_xC6Ks",
+                                "text": "RNG vs DK Final Highlights ALL GAMES | MSI 2021 Grand Final2021年5月23日 · RNG vs DK Final Highlights Game 1, Game 2, Game 3, Game 4, Game 5, ALL GAMES | MSI ...时长： 36:16发布时间： 2021年5月23日"
+                },
+                {
+                                "title": "Ringcentral, Inc. (RNG) Stock Price, News, Quote & History",
+                                "keyword": "RNG",
+                                "url": "https://finance.yahoo.com/quote/RNG/",
+                                "text": "Ringcentral, Inc. (RNG) Stock Price, News, Quote & HistoryFind the latest Ringcentral, Inc. (RNG) stock quote, history, news and other vital information to help you with your stock trading and investing."
+                },
+                {
+                                "title": "random number generator (RNG) - Glossary | CSRC",
+                                "keyword": "RNG",
+                                "url": "https://csrc.nist.gov/glossary/term/random_number_generator",
+                                "text": "random number generator (RNG) - Glossary | CSRCrandom number generator (RNG) · A process that is invoked to generate a random sequence of values (usually a sequence of bits) or an individual random value. · A ..."
+                },
+                {
+                                "title": "What is Renewable Natural Gas? | SoCalGas",
+                                "keyword": "RNG",
+                                "url": "https://www.socalgas.com/sustainability/renewable-gas/what-is-renewable-natural-gas",
+                                "text": "What is Renewable Natural Gas? | SoCalGasYou've probably heard of renewable energy sources like solar and wind, but you may not have heard of renewable natural gas (RNG). Learn more about this ...时长： 2:40发布时间： 2017年5月26日"
+                },
+                {
+                                "title": "What Is RNG? A Lesson for Gamers - MakeUseOf",
+                                "keyword": "RNG",
+                                "url": "https://www.makeuseof.com/tag/lesson-gamers-rng/",
+                                "text": "What Is RNG? A Lesson for Gamers - MakeUseOf2019年9月10日 · RNG stands for random number generator. This is defined as a device or algorithm that comes up with numbers by random chance. In gaming terms, ..."
+                },
+                {
+                                "title": "Berq RNG",
+                                "keyword": "RNG",
+                                "url": "http://www.berqrng.com/",
+                                "text": "Berq RNGRNG is a carbon-negative gas that replaces conventional, carbon-emitting natural gas. RNG is created by capturing methane from organic matter that is currently ..."
+                },
+                {
+                                "title": "Renewable Natural Gas Production - Alternative Fuels Data Center",
+                                "keyword": "RNG",
+                                "url": "https://afdc.energy.gov/fuels/natural_gas_renewable.html",
+                                "text": "Renewable Natural Gas Production - Alternative Fuels Data CenterLike conventional natural gas, RNG can be used as a transportation fuel in the form of compressed natural gas (CNG) or liquefied natural gas (LNG). RNG ..."
+                },
+                {
+                                "title": "Random Number Generators (RNG) Overview - oneAPI Specification",
+                                "keyword": "RNG",
+                                "url": "https://spec.oneapi.io/versions/1.0-rev-3/elements/oneMKL/source/domains/rng/overview.html",
+                                "text": "Random Number Generators (RNG) Overview - oneAPI SpecificationRandom Number Generators (RNG) Overview¶ · S is a finite set of states (the state space) · μ is a probability distribution on S for the initial state (or seed) s0."
+                },
+                {
+                                "title": "RNG - Urban Dictionary",
+                                "keyword": "RNG",
+                                "url": "https://www.urbandictionary.com/define.php?term=RNG",
+                                "text": "RNG - Urban DictionaryRNG stands for \"Random Number Generator.\" It brings the meaning of insane luck and prosperity. Previously, this word was only used to emphasize the luckiness of ..."
+                }
+]
+                    
+Thread-2|2021-10-10 15:59:47,551|mongo_pipeline.py|save_items|line:44|INFO| 共导出 10 条数据到 spider_data,  新增 10条, 重复 0 条
+Thread-3|2021-10-10 15:59:48,964|request.py|get_response|line:328|DEBUG| 
+                -------------- GoogleCurl.parse request for ----------------
+                url  = https://www.google.com/search?q=RNG&start=0
+                method = GET
+                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:2.0b8pre) Gecko/20101128 Firefox/4.0b8pre', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
+                
+Thread-2|2021-10-10 15:59:49,558|item_buffer.py|__add_item_to_db|line:306|DEBUG| 
+                -------------- item 批量入库 --------------
+                表名: spider_data
+                datas: [
+                {
+                                "title": "RingCentral, Inc. Class A Common Stock (RNG) - Nasdaq",
+                                "keyword": "RNG",
+                                "url": "https://www.nasdaq.com/market-activity/stocks/rng",
+                                "text": "RingCentral, Inc. Class A Common Stock (RNG) - NasdaqRingCentral, Inc. Class A Common Stock (RNG) Stock Quotes - Nasdaq offers stock quotes & market activity data for US and global markets."
+                },
+                {
+                                "title": "Align RNG – Clean energy from renewable natural gas",
+                                "keyword": "RNG",
+                                "url": "https://alignrng.com/",
+                                "text": "Align RNG – Clean energy from renewable natural gasHarnessing clean, renewable energy from our nation's hog farms for the good of the climate, consumers and family farmers. Learn more."
+                },
+                {
+                                "title": "A random number generator is a must for highest HSM security",
+                                "keyword": "RNG",
+                                "url": "https://hsm.utimaco.com/solutions/applications/random-number-generator/",
+                                "text": "A random number generator is a must for highest HSM securityTrue random numbers are the foundation of strong, unique encryption keys. A random number generator (RNG) is a function or device (computational or ..."
+                },
+                {
+                                "title": "RNG",
+                                "keyword": "RNG",
+                                "url": "https://rngoil.ru/en/",
+                                "text": "RNGRNG is an oil and gas company developing the Eastern Blocks of Srednebotuobinskoe oil and gas condensate field in the Eastern Siberia."
+                },
+                {
+                                "title": "RNG by Clean Energy, Fueling a Renewable Future",
+                                "keyword": "RNG",
+                                "url": "https://rng.cleanenergyfuels.com/",
+                                "text": "RNG by Clean Energy, Fueling a Renewable FutureRenewable natural gas (RNG) is a cleaner and less expensive fuel for your commercial vehicle fleet. Learn more about RNG."
+                },
+                {
+                                "title": "RingCentral: Message. Video. Phone.",
+                                "keyword": "RNG",
+                                "url": "https://www.ringcentral.com/",
+                                "text": "RingCentral: Message. Video. Phone.RingCentral provides businesses with different cloud-based business communications solutions that include message, video, phone, and contact center services ..."
+                },
+                {
+                                "title": "Renewable Natural Gas - FortisBC",
+                                "keyword": "RNG",
+                                "url": "https://www.fortisbc.com/services/sustainable-energy-options/renewable-natural-gas",
+                                "text": "Renewable Natural Gas - FortisBCEnvironmental benefits of Renewable Natural Gas. Carbon neutral RNG helps reduce greenhouse gas emissions. It also puts organic waste to work, rather than ..."
+                },
+                {
+                                "title": "How does a Random Number Generator work? | Encyclopedia - HYPR",
+                                "keyword": "RNG",
+                                "url": "https://www.hypr.com/random-number-generator/",
+                                "text": "How does a Random Number Generator work? | Encyclopedia - HYPRA random number generator is a hardware device or software algorithm that generates a number that is taken from a limited or unlimited distribution and ..."
+                },
+                {
+                                "title": "Renewable Natural Gas",
+                                "keyword": "RNG",
+                                "url": "https://www.aga.org/natural-gas/renewable/",
+                                "text": "Renewable Natural GasRNG combines low- to negative life-cycle carbon emissions with the high-energy density, storage capability and transportability of natural gas. Thus, RNG is ..."
+                },
+                {
+                                "title": "You're Doing IoT RNG - Bishop Fox Labs",
+                                "keyword": "RNG",
+                                "url": "https://labs.bishopfox.com/tech-blog/youre-doing-iot-rng",
+                                "text": "You're Doing IoT RNG - Bishop Fox Labs2021年8月5日 · Learn why hardware random number generators (RNG) used by billions of IoT devices to create encryption keys don't always generate random ..."
+                }
+]
+                    
+Thread-2|2021-10-10 15:59:49,607|mongo_pipeline.py|save_items|line:44|INFO| 共导出 10 条数据到 spider_data,  新增 10条, 重复 0 条
+Thread-2|2021-10-10 15:59:51,626|item_buffer.py|__add_item_to_db|line:306|DEBUG| 
+                -------------- item 批量入库 --------------
+                表名: spider_data
+                datas: [
+                {
+                                "title": "设置",
+                                "keyword": "RNG",
+                                "url": "https://www.google.com.hk/preferences?hl=zh-CN",
+                                "text": "小提示： 仅搜索简体中文结果。您可以在设置中指定您的搜索语言"
+                },
+                {
+                                "title": "RANDOM.ORG - True Random Number Service",
+                                "keyword": "RNG",
+                                "url": "https://www.random.org/",
+                                "text": "RANDOM.ORG - True Random Number ServiceStatistics. Please see our Cookie Policy or visit our Privacy Dashboard for more information. Allow Selected Allow All. True Random Number Generator Min:"
+                },
+                {
+                                "title": "RNG电子竞技俱乐部- 维基百科，自由的百科全书",
+                                "keyword": "RNG",
+                                "url": "https://zh.wikipedia.org/zh-hans/RNG%E7%94%B5%E5%AD%90%E7%AB%9E%E6%8A%80%E4%BF%B1%E4%B9%90%E9%83%A8",
+                                "text": "RNG电子竞技俱乐部- 维基百科，自由的百科全书RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "英雄联盟分部",
+                                "keyword": "RNG",
+                                "url": "https://zh.wikipedia.org/zh-hans/RNG%E7%94%B5%E5%AD%90%E7%AB%9E%E6%8A%80%E4%BF%B1%E4%B9%90%E9%83%A8#%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F%E5%88%86%E9%83%A8",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "王者荣耀RNG.M",
+                                "keyword": "RNG",
+                                "url": "https://zh.wikipedia.org/zh-hans/RNG%E7%94%B5%E5%AD%90%E7%AB%9E%E6%8A%80%E4%BF%B1%E4%B9%90%E9%83%A8#%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80_RNG.M",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "绝地求生分部",
+                                "keyword": "RNG",
+                                "url": "https://zh.wikipedia.org/zh-hans/RNG%E7%94%B5%E5%AD%90%E7%AB%9E%E6%8A%80%E4%BF%B1%E4%B9%90%E9%83%A8#%E7%BB%9D%E5%9C%B0%E6%B1%82%E7%94%9F%E5%88%86%E9%83%A8",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "英雄联盟职业联赛",
+                                "keyword": "RNG",
+                                "url": "http://zh.wikipedia.org/wiki/%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F%E8%81%8C%E4%B8%9A%E8%81%94%E8%B5%9B",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "王者荣耀职业联赛",
+                                "keyword": "RNG",
+                                "url": "http://zh.wikipedia.org/wiki/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E8%81%8C%E4%B8%9A%E8%81%94%E8%B5%9B",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "守望先锋联赛",
+                                "keyword": "RNG",
+                                "url": "http://zh.wikipedia.org/wiki/%E5%AE%88%E6%9C%9B%E5%85%88%E9%94%8B%E8%81%94%E8%B5%9B",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "绝地求生冠军联赛",
+                                "keyword": "RNG",
+                                "url": "http://zh.wikipedia.org/wiki/%E7%BB%9D%E5%9C%B0%E6%B1%82%E7%94%9F%E5%86%A0%E5%86%9B%E8%81%94%E8%B5%9B",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "KFC",
+                                "keyword": "RNG",
+                                "url": "http://zh.wikipedia.org/wiki/KFC",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "梅赛德斯奔驰",
+                                "keyword": "RNG",
+                                "url": "http://zh.wikipedia.org/wiki/%E6%A2%85%E8%B5%9B%E5%BE%B7%E6%96%AF%E5%A5%94%E9%A9%B0",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "东鹏特饮",
+                                "keyword": "RNG",
+                                "url": "http://zh.wikipedia.org/wiki/%E4%B8%9C%E9%B9%8F%E7%89%B9%E9%A5%AE",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "谷粒多",
+                                "keyword": "RNG",
+                                "url": "http://zh.wikipedia.org/wiki/%E4%BC%8A%E5%88%A9%E9%9B%86%E5%9B%A2",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "惠普",
+                                "keyword": "RNG",
+                                "url": "http://zh.wikipedia.org/wiki/%E6%83%A0%E6%99%AE",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "快手",
+                                "keyword": "RNG",
+                                "url": "http://zh.wikipedia.org/wiki/%E5%BF%AB%E6%89%8B",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "罗技",
+                                "keyword": "RNG",
+                                "url": "http://zh.wikipedia.org/wiki/%E7%BE%85%E6%8A%80",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "虎牙直播",
+                                "keyword": "RNG",
+                                "url": "http://zh.wikipedia.org/wiki/%E8%99%8E%E7%89%99%E7%9B%B4%E6%92%AD",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "中信银行",
+                                "keyword": "RNG",
+                                "url": "http://zh.wikipedia.org/wiki/%E4%B8%AD%E4%BF%A1%E9%93%B6%E8%A1%8C",
+                                "text": "RNG电子竞技俱乐部（英語：Royal Never Give Up，简称RNG）是一家成立于2012年5月的中国电子竞技俱乐部，该俱乐部当前以《英雄联盟》为主要项目，并有《Dota ... 英雄联盟分部 · 王者荣耀RNG.M · 绝地求生分部 分部: 《英雄联盟》; 《王者荣耀》; 《绝地求生》; 《炉石传说》; 《街头篮球》; 《Dota 2》; 《守望先锋》; 《QQ飛車》 联赛: 英雄联盟职业联赛; 王者荣耀职业联赛; 街头篮球职业联赛; 守望先锋联赛; 绝地求生冠军联赛; QQ飛車手遊S聯賽 城市: 北京市、上饶市、上海市、成都市 赞助: iGame; KFC; 傲风; 梅赛德斯奔驰; 东鹏特饮; Doritos; 谷粒多; 惠普; 快手; 罗技; 虎牙直播; 中信银行"
+                },
+                {
+                                "title": "Random number generation - Wikipedia",
+                                "keyword": "RNG",
+                                "url": "https://en.wikipedia.org/wiki/Random_number_generation",
+                                "text": "Random number generation - WikipediaRandom number generation is a process by which, often by means of a random number generator (RNG), a sequence of numbers or symbols that cannot be ..."
+                },
+                {
+                                "title": "Royal Never Give Up (@RNG) | Twitter",
+                                "keyword": "RNG",
+                                "url": "https://twitter.com/rng",
+                                "text": "Royal Never Give Up (@RNG) | TwitterThe latest Tweets from Royal Never Give Up (@RNG). 4x #LPL Champions. The Official Twitter Account for Royal Never Give Up #RNGWIN 皇族电子竞技俱乐部官方推 ..."
+                },
+                {
+                                "title": "What is – RNG – Esports Wales\nesportswales.org > what-is-rng",
+                                "keyword": "RNG",
+                                "url": "https://esportswales.org/what-is-rng/",
+                                "text": "As for what it means… A Random Number Generator (RNG) is a mathematical construct, either computational or as a hardware device that is designed to generate a random set of numbers that should not display any distinguishable patterns in their appearance or generation, hence the word random.*What is – RNG – Esports Wales"
+                },
+                {
+                                "title": "Random number generation - Wikipedia\nen.wikipedia.org > wiki > Random_number_generation",
+                                "keyword": "RNG",
+                                "url": "https://en.wikipedia.org/wiki/Random_number_generation",
+                                "text": "Random number generation is a process by which, often by means of a random number generator (RNG), a sequence of numbers or symbols that cannot be reasonably predicted better than by random chance is generated. ... Several computational methods for pseudorandom number generation exist.Random number generation - Wikipedia"
+                },
+                {
+                                "title": "RNG Isn't Random - MMOs.com\nmmos.com > editorials > rng-isnt-random",
+                                "keyword": "RNG",
+                                "url": "https://mmos.com/editorials/rng-isnt-random",
+                                "text": "Most RNGs are based on a numerical system that ranges from 1 to 100. ... They are what we call 'pseudo-random' numbers.” The pattern can be made incredibly complex and difficult to identify, but at the end of the day RNG isn't really random at all.RNG Isn't Random - MMOs.com"
+                },
+                {
+                                "title": "Understanding random number generators, and their limitations, in ...\nwww.redhat.com > blog > understanding-random-number-generators-and-t...",
+                                "keyword": "RNG",
+                                "url": "https://www.redhat.com/en/blog/understanding-random-number-generators-and-their-limitations-linux",
+                                "text": "A source of entropy (RNG) Random number generators or RNGS are hardware devices or software programs which take non-deterministic inputs in the form of physical measurements of temperature or phase noise or clock signals etc and generate unpredictable numbers as its output.Understanding random number generators, and their limitations, in ..."
+                },
+                {
+                                "title": "rng超话 - 微博",
+                                "keyword": "RNG",
+                                "url": "https://weibo.com/p/100808d2d9ce665f66ae49556b47436a514c0f",
+                                "text": "rng超话 - 微博超话社区，超有话聊。rng超话，阅读:11341502798,帖子:723665,粉丝:0。 ... 锐不可挡,R光扬声# RNG战队英雄联盟2021全球总决赛小组赛赛程图来啦～"
+                },
+                {
+                                "title": "RNG电子竞技俱乐部 - 微博",
+                                "keyword": "RNG",
+                                "url": "https://weibo.com/SHroyalClub?refer_flag=1005050010_",
+                                "text": "RNG电子竞技俱乐部 - 微博RNG电子竞技俱乐部，皇族电子竞技俱乐部RNG战队官方微博。RNG电子竞技俱乐部的微博主页、个人资料、相册。新浪微博，随时随地分享身边的新鲜事儿。"
+                },
+                {
+                                "title": "Royal Never Give Up - Leaguepedia | League of Legends Esports Wiki",
+                                "keyword": "RNG",
+                                "url": "https://lol.fandom.com/wiki/Royal_Never_Give_Up",
+                                "text": "Royal Never Give Up - Leaguepedia | League of Legends Esports WikiIt marked not only RNG's first LPL championship but also the first for any Royal Club team (including the original Royal Club, Star Horn Royal, and Team King.)."
+                },
+                {
+                                "title": "Royal Never Give Up - Liquipedia Dota 2 Wiki",
+                                "keyword": "RNG",
+                                "url": "https://liquipedia.net/dota2/Royal_Never_Give_Up",
+                                "text": "Royal Never Give Up - Liquipedia Dota 2 WikiRoyal Never Give Up, often abbreviated as RNG, is a Chinese professional esports organization. The club is well known for its League of Legends squad."
+                },
+                {
+                                "title": "Royal Never Give Up - Liquipedia League of Legends Wiki",
+                                "keyword": "RNG",
+                                "url": "https://liquipedia.net/leagueoflegends/Royal_Never_Give_Up",
+                                "text": "Royal Never Give Up - Liquipedia League of Legends Wiki2021年10月2日 · In 2018, the RNG roster consisting of Letme, Karsa, Xiaohu, Uzi and Ming managed to win four tournaments in a row: LPL Spring 2018, ..."
+                },
+                {
+                                "title": "What Is RNG in Video Games, and Why Do People Criticize It?",
+                                "keyword": "RNG",
+                                "url": "https://www.howtogeek.com/446695/what-is-rng-in-video-games-and-why-do-people-criticize-it/",
+                                "text": "What Is RNG in Video Games, and Why Do People Criticize It?2019年11月9日 · A random number generator (RNG) is an algorithm that produces random numbers. In video games, these random numbers are used to determine random ..."
+                }
+]
+                    
+Thread-2|2021-10-10 15:59:51,642|mongo_pipeline.py|save_items|line:44|INFO| 共导出 31 条数据到 spider_data,  新增 31条, 重复 0 条
+Thread-3|2021-10-10 15:59:52,072|parser_control.py|run|line:464|DEBUG| parser 等待任务...
+GoogleCurl|2021-10-10 15:59:55,510|air_spider.py|run|line:104|INFO| 无任务，爬虫结束
