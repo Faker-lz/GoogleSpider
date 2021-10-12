@@ -13,6 +13,7 @@ Currently, data is stored in mongodb, and the database configuration is in line 
 MONGO_IP = "localhost"
 MONGO_PORT = 27017
 MONGO_DB = "Google_spider"
+MonGO_TABLE = 'spider_date'
 MONGO_USER_NAME = ""
 MONGO_USER_PASS = ""
 ```
@@ -70,7 +71,7 @@ OTHERS_LOG_LEVAL = "ERROR"  # leval
 
 ## Quick start
 
-Crawl the `3` page data with the keyword 'Trump'
+Crawl the `3` page data with the keyword `Trump`
 
 ```python
 from spiders.google_curl import GoogleCurl
@@ -79,8 +80,6 @@ spider = GoogleCurl('Trump', 3)
 spider.start()
 
 ```
-
-![image-20211010170018075](C:\Users\wlz\AppData\Roaming\Typora\typora-user-images\image-20211010170018075.png)
 
 * The first parameter is the search keyword, and the second parameter is the number of pages crawled
 

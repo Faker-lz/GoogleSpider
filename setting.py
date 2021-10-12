@@ -15,6 +15,7 @@ import os
 MONGO_IP = "localhost"
 MONGO_PORT = 27017
 MONGO_DB = "Google_spider"
+MonGO_TABLE = 'spider_update'
 MONGO_USER_NAME = ""
 MONGO_USER_PASS = ""
 #

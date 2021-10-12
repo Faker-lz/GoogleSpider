@@ -9,17 +9,25 @@ Created on 2021-10-10 10:45:14
 
 import feapder
 from feapder import Item
-from feapder.utils.log import log
+from feapder.db.mongodb import MongoDB
+from setting import MonGO_TABLE
 import cchardet
 from pyquery import PyQuery as pq
 from utils import get_random_user_agent, filter_link
+import re
 
 
 class GoogleCurl(feapder.AirSpider):
     def __init__(self, query: str = '', page_range: int = 3):
         self.page_range = page_range
         self.query = query
+        self.pq_content = None
+        self.data = list()
         super().__init__()
+
+    def start_callback(self):
+        db = MongoDB()
+        db.delete(MonGO_TABLE, {'keyword': self.query})
 
     def download_midware(self, request):
         """
@@ -32,44 +40,50 @@ class GoogleCurl(feapder.AirSpider):
 
     def start_requests(self):
         for page in range(self.page_range):
+            if page == (self.page_range - 1):
+                finish = True
+            else:
+                finish = False
             yield feapder.Request(
-                "https://www.google.com/search?q={query}&start={start}".format(query=self.query, start=page * 10))
+                "https://www.google.com/search?q={query}&start={start}".format(query=self.query, start=page * 10),
+                finish=finish
+            )
+
+    def validate(self, request, response):
+        content = response.content
+        text = content.decode(cchardet.detect(content)['encoding'])
+        judge_re = re.compile(r'[<](.*?)[>]', re.S)
+        judge_text = re.findall(judge_re, text)[0]
+        if 'Mobile' in judge_text:
+            raise Exception('爬取到移动端界面!')
+        self.pq_content = pq(text)
 
     def parse(self, request, response):
-        content = response.content
-        charset = cchardet.detect(content)
-        text = content.decode(charset['encoding'])
-        pq_content = pq(text)
-        result_list = list()
-        print(request)
-
-        for p in pq_content.items('a'):
+        for p in self.pq_content.items('a'):
             if p.attr('href').startswith('/url?q='):
                 pa = p.parent()
                 ppa = pa.parent()
                 if ppa.attr('class') is not None:
                     result = dict()
                     head = p('h3').eq(0).text()
-                    head_text = p.text()
-                    result['title'] = head if head else head_text
-                    if result['title'] == '了解详情':
-                        log.error(request.headers['User-Agent']+'--非法页面')
-                        raise Exception(request.headers['User-Agent']+'--非法页面')
-                    elif result['title'] == '':
+                    if head is None or head == '':
                         continue
-                    result['keyword'] = self.query
-                    result['url_path'] = p('div').eq(1).text()
                     href = p.attr('href')
                     if href:
                         url = filter_link(href)
                         result['url'] = url
-                    text = ppa('div').eq(0).text()
-                    text = text.replace(result['url_path'], '').replace('\n', '')
+                    span = ppa('span').eq(0).text()
+                    judge_date = re.match(r'\d{4}(年|-)\d{1,2}(月|-)\d{1,2}(日|)', span)
+                    url_path = p('div').eq(1).text()
+                    text = ppa('div').eq(6).text()
+                    text = text.replace(url_path, '').replace('\n', '')
+                    result['title'] = head
+                    result['keyword'] = self.query
+                    result['inserted_time'] = '2021-10-15'
+                    result['created_time'] = judge_date.group() if judge_date else None
                     result['text'] = text
-                    result.pop('url_path')
                     result_item = Item(**result)
-                    result_item.table_name = 'spider_data'
-                    result_list.append(result)
+                    result_item.table_name = MonGO_TABLE
                     yield result_item
 
 
