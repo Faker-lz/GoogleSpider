@@ -5,7 +5,7 @@
 """
 import os.path
 import random
-from setting import USER_AGENT
+from setting import USER_AGENT, DOMAIN
 
 
 def get_random_user_agent() -> str:
@@ -14,6 +14,13 @@ def get_random_user_agent() -> str:
     :return:
     """
     return random.choice(get_data('user_agents.txt', USER_AGENT))
+
+def get_domain() -> str:
+    """
+    Get a random domain
+    """
+    return random.choice((get_data('all_domain.txt', DOMAIN)))
+
 
 
 def get_data(filename: str, default='') -> list:

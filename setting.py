@@ -42,7 +42,7 @@ ITEM_PIPELINES = [
 #
 # # SPIDER
 # SPIDER_THREAD_COUNT = 1  # 爬虫并发数
-SPIDER_SLEEP_TIME = [0, 1]  # 下载时间间隔 单位秒。 支持随机 如 SPIDER_SLEEP_TIME = [2, 5] 则间隔为 2~5秒之间的随机数，包含2和5
+SPIDER_SLEEP_TIME = [0, 10]  # 下载时间间隔 单位秒。 支持随机 如 SPIDER_SLEEP_TIME = [2, 5] 则间隔为 2~5秒之间的随机数，包含2和5
 # SPIDER_TASK_COUNT = 1  # 每个parser从内存队列中获取任务的数量
 # SPIDER_MAX_RETRY_TIMES = 100  # 每个请求最大重试次数
 # KEEP_ALIVE = False  # 爬虫是否常驻
@@ -84,6 +84,7 @@ SPIDER_SLEEP_TIME = [0, 1]  # 下载时间间隔 单位秒。 支持随机 如 S
 # RANDOM_HEADERS = True
 # # UserAgent类型 支持 'chrome', 'opera', 'firefox', 'internetexplorer', 'safari'，'mobile' 若不指定则随机类型
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36'
+DOMAIN = 'google.com'
 
 # USER_AGENT_TYPE = "chrome"
 # # 默认使用的浏览器头 RANDOM_HEADERS=True时不生效

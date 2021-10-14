@@ -13,21 +13,21 @@ from feapder.db.mongodb import MongoDB
 from setting import MonGO_TABLE
 import cchardet
 from pyquery import PyQuery as pq
-from utils import get_random_user_agent, filter_link
+from utils import get_random_user_agent, filter_link, get_domain
 import re
 
 
 class GoogleCurl(feapder.AirSpider):
     def __init__(self, query: str = '', page_range: int = 3):
         self.page_range = page_range
+        self.url = "https://{domain}/search?q={query}&start={start}"
         self.query = query
         self.pq_content = None
-        self.data = list()
         super().__init__()
 
     def start_callback(self):
         db = MongoDB()
-        db.delete(MonGO_TABLE, {'keyword': self.query})
+        db.get_collection(MonGO_TABLE).delete_many({'keyword': self.query})
 
     def download_midware(self, request):
         """
@@ -35,28 +35,30 @@ class GoogleCurl(feapder.AirSpider):
         :param request:
         :return:
         """
+        # request.proxies = {
+        #     "http": "http://3.211.65.185:80",
+        #     "https": "https://10.245.142.209:1089"
+        # }
         request.headers = {'User-Agent': get_random_user_agent(),
                            'Connection': 'close'}
 
     def start_requests(self):
         for page in range(self.page_range):
-            if page == (self.page_range - 1):
-                finish = True
-            else:
-                finish = False
             yield feapder.Request(
-                "https://www.google.com/search?q={query}&start={start}".format(query=self.query, start=page * 10),
-                finish=finish
+                self.url.format(domain=get_domain(), query=self.query, start=page * 10), page=page*10
             )
 
     def validate(self, request, response):
         content = response.content
         text = content.decode(cchardet.detect(content)['encoding'])
+        self.pq_content = pq(text)
         judge_re = re.compile(r'[<](.*?)[>]', re.S)
         judge_text = re.findall(judge_re, text)[0]
         if 'Mobile' in judge_text:
-            raise Exception('爬取到移动端界面!')
-        self.pq_content = pq(text)
+            raise Exception('非法界面!')
+        if response.status_code != 200:
+            request.url = self.url.format(domain=get_domain(), query=self.query, start=request.page)
+            raise Exception('请求错误!')        # 改变Google 服务器地址后重新爬取
 
     def parse(self, request, response):
         for p in self.pq_content.items('a'):
@@ -73,18 +75,20 @@ class GoogleCurl(feapder.AirSpider):
                         url = filter_link(href)
                         result['url'] = url
                     span = ppa('span').eq(0).text()
-                    judge_date = re.match(r'\d{4}(年|-)\d{1,2}(月|-)\d{1,2}(日|)', span)
+                    judge_date_cn = re.match(r'\d{4}(年|-)\d{1,2}(月|-)\d{1,2}(日|)', span)
+                    judge_date_en = re.match(r'\d{1,2} [a-zA-Z]{3} \d{4}', span)
                     url_path = p('div').eq(1).text()
                     text = ppa('div').eq(6).text()
                     text = text.replace(url_path, '').replace('\n', '')
                     result['title'] = head
                     result['keyword'] = self.query
                     result['inserted_time'] = '2021-10-15'
-                    result['created_time'] = judge_date.group() if judge_date else None
+                    result['created_time'] = span if judge_date_cn or judge_date_en else None
                     result['text'] = text
                     result_item = Item(**result)
                     result_item.table_name = MonGO_TABLE
                     yield result_item
+
 
 
 if __name__ == "__main__":
