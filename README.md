@@ -1,6 +1,6 @@
 # GoogleSpider
 
-Crawl the information of a given keyword on Google search engine
+A very stable spider that crawls the information of a given keywords on Google search engine
 
 ## Config
 
@@ -13,7 +13,7 @@ Currently, data is stored in mongodb, and the database configuration is in line 
 MONGO_IP = "localhost"
 MONGO_PORT = 27017
 MONGO_DB = "Google_spider"
-MonGO_TABLE = 'spider_date'
+MonGO_TABLE = 'spider_update'
 MONGO_USER_NAME = ""
 MONGO_USER_PASS = ""
 ```
