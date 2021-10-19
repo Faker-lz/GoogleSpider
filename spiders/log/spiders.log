@@ -1,424 +1,273 @@
-Thread-3|2021-10-14 14:45:33,680|parser_control.py|run|line:464|DEBUG| parser 等待任务...
-Thread-3|2021-10-14 14:45:34,683|request.py|get_response|line:328|DEBUG| 
+Thread-3|2021-10-14 20:51:36,787|parser_control.py|run|line:464|DEBUG| parser 等待任务...
+Thread-3|2021-10-14 20:51:37,793|request.py|get_response|line:328|DEBUG| 
                 -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.dk/search?q=孟晚舟&start=0
+                url  = https://www.google.com.co/search?q=孟晚舟&start=0
                 method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; zh-CN; rv:1.9.2.12) Gecko/20101026 Firefox/3.6.12 ( .NET CLR 3.5.30729; .NET4.0E)', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
+                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; cs; rv:1.9.2.4) Gecko/20100513 Firefox/3.6.4 (.NET CLR 3.5.30729)', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
                 
-Thread-3|2021-10-14 14:45:36,283|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.com.na/search?q=孟晚舟&start=0",
-                            "parser_name": "GoogleCurl",
-                            "page": 0,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; zh-CN; rv:1.9.2.12) Gecko/20101026 Firefox/3.6.12 ( .NET CLR 3.5.30729; .NET4.0E)",
-                                                        "Connection": "close"
-                            }
-}
-                                
-Thread-3|2021-10-14 14:45:36,284|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.com.na/search?q=孟晚舟&start=0
-                                        重试次数 1
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:45:44,295|request.py|get_response|line:328|DEBUG| 
+Thread-2|2021-10-14 20:51:39,809|item_buffer.py|__add_item_to_db|line:306|DEBUG| 
+                -------------- item 批量入库 --------------
+                表名: spider_update
+                datas: [
+                {
+                                "url": "https://www.bbc.com/zhongwen/trad/world-58720740",
+                                "title": "孟晚舟獲釋背後的「魔鬼在細節」 五個關鍵法律解讀 - BBC",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": "2021年9月29日",
+                                "text": "2021年9月29日 · 自加拿大當局於2018年12月逮捕孟晚舟後，就開始了冗長的引渡審判。美國希望將孟引渡，以調查華為是否違反了美國對伊朗的制裁。在長達1000多天的司法訴訟中 ..."
+                },
+                {
+                                "url": "https://zh.wikipedia.org/zh-tw/%E5%AD%9F%E6%99%9A%E8%88%9F",
+                                "title": "孟晚舟- 維基百科，自由的百科全書",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "孟晚舟（英語：Meng Wanzhou，Sabrina、Cathy，1972年2月13日－），女，原為中國大陸人，持香港永久居民身份證，生於四川成都，祖籍浙江浦江。中華人民共和國企業家、 ... 早年生平 · 被美國政府指控 · 私生活 配偶: 第一任：鄭錡澤第二任：劉曉棕（2007年結婚） 教育程度: 碩士 政黨: 中國共產黨 父母: 任正非（父）; 孟軍（母）"
+                },
+                {
+                                "url": "https://zh.wikipedia.org/zh-tw/%E5%AD%9F%E6%99%9A%E8%88%9F%E4%BA%8B%E4%BB%B6",
+                                "title": "孟晚舟事件- 維基百科",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "孟晚舟事件始於2018年12月1日加拿大警方應美國政府司法互助要求逮捕在溫哥華轉機的中國華為公司副董事長兼財務長孟晚舟，引發涉及中、美、加三國的司法、政治、外交 ... 背景 · 過程 · 法律攻防與緩起訴 · 釋放的後續反應"
+                },
+                {
+                                "url": "https://www.epochtimes.com/b5/tag/%E5%AD%9F%E6%99%9A%E8%88%9F.html",
+                                "title": "孟晚舟| 大紀元",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "孟晚舟的相關文章."
+                },
+                {
+                                "url": "https://www.rfi.fr/cn/%E4%B8%AD%E5%9C%8B/20211012-%E5%8C%97%E4%BA%AC%E7%A8%B1%E5%AD%9F%E6%99%9A%E8%88%9F%E5%9B%9E%E5%9C%8B%E5%9C%8B%E9%9A%9B%E6%84%8F%E7%BE%A9%E5%A4%A7-%E7%AE%A1%E5%AE%83%E8%8F%AF%E7%82%BA%E5%BF%AB%E5%80%92%E4%B8%8B",
+                                "title": "北京稱孟晚舟回國國際意義大 管它華為快倒下 - RFI",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "2 天前 · 孟晚舟從加拿大返回中國已近三周，掀起的一股愛國熱潮也已隨風而逝，一時被尊為“民族英雄”的孟晚舟悄無聲息，只有中國外交部副部長樂玉成周二還……"
+                },
+                {
+                                "url": "https://www.chinatimes.com/realtimenews/20211013000016-260408",
+                                "title": "孟晚舟換回2公民加總理一席話曝對陸態度變了- 國際 - 中國時報",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "2 天前 · 加拿大政府釋放華為財務長孟晚舟後，北京也釋放2名加拿大公民，部份專家認為，加拿大總理杜魯道（Justin Trudeau）上周給日本首相岸田文雄的賀文顯示 ..."
+                },
+                {
+                                "url": "https://www.youtube.com/watch?v=QqHyMQ0bGcU",
+                                "title": "獨家｜“法國孟晚舟”皮耶魯齊：硬仗還在後頭！20211008【下載鳳凰 ...",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": ""
+                },
+                {
+                                "url": "https://www.facebook.com/hashtag/%E5%AD%9F%E6%99%9A%E8%88%9F?__eep__=6",
+                                "title": "孟晚舟",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "孟晚舟獲釋後抱著律師大哭，她用英語發表聲明，感謝了BC省最高法院副首席大法官霍姆斯，加拿大檢察官，加拿大政府、人民和媒體。她還感謝了中國大使館和自己的律師團隊 ..."
+                },
+                {
+                                "url": "https://wiki.mbalib.com/zh-tw/%E5%AD%9F%E6%99%9A%E8%88%9F",
+                                "title": "孟晚舟- MBA智库百科",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "孟晚舟——任正非之女，現任華為副董事長、首席財務官孟晚舟（Cathy Meng），漢族，1972年出生於四川，任正非之女，中國香港永久居民，深圳大學會計系學士，中國華中理工 ..."
+                }
+]
+                    
+Thread-2|2021-10-14 20:51:39,836|mongo_pipeline.py|save_items|line:44|INFO| 共导出 9 条数据到 spider_update,  新增 9条, 重复 0 条
+Thread-3|2021-10-14 20:51:48,867|request.py|get_response|line:328|DEBUG| 
                 -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.co.ao/search?q=孟晚舟&start=10
-                method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; rv:2.0) Gecko/20110319 Firefox/4.0', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
-                
-Thread-3|2021-10-14 14:45:46,351|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.cd/search?q=孟晚舟&start=10",
-                            "parser_name": "GoogleCurl",
-                            "page": 10,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; rv:2.0) Gecko/20110319 Firefox/4.0",
-                                                        "Connection": "close"
-                            }
-}
-                                
-Thread-3|2021-10-14 14:45:46,353|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.cd/search?q=孟晚舟&start=10
-                                        重试次数 1
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:45:51,355|request.py|get_response|line:328|DEBUG| 
-                -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.com.qa/search?q=孟晚舟&start=20
-                method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2 ( .NET CLR 3.5.30729)', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
-                
-Thread-3|2021-10-14 14:45:52,707|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.cv/search?q=孟晚舟&start=20",
-                            "parser_name": "GoogleCurl",
-                            "page": 20,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2 ( .NET CLR 3.5.30729)",
-                                                        "Connection": "close"
-                            }
-}
-                                
-Thread-3|2021-10-14 14:45:52,707|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.cv/search?q=孟晚舟&start=20
-                                        重试次数 1
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:46:01,716|request.py|get_response|line:328|DEBUG| 
-                -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.com.na/search?q=孟晚舟&start=0
+                url  = https://www.google.com.kw/search?q=孟晚舟&start=10
                 method = GET
                 body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; ko; rv:1.9.2.4) Gecko/20100523 Firefox/3.6.4', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
                 
-Thread-3|2021-10-14 14:46:04,760|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.lu/search?q=孟晚舟&start=0",
-                            "retry_times": 1,
-                            "parser_name": "GoogleCurl",
-                            "filter_repeat": false,
-                            "page": 0,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 5.1; ko; rv:1.9.2.4) Gecko/20100523 Firefox/3.6.4",
-                                                        "Connection": "close"
-                            },
-                            "error_msg": "Exception: 请求错误!",
-                            "response": "<Response [429]>"
-}
-                                
-Thread-3|2021-10-14 14:46:04,761|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.lu/search?q=孟晚舟&start=0
-                                        重试次数 2
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:46:09,770|request.py|get_response|line:328|DEBUG| 
+Thread-2|2021-10-14 20:51:51,922|item_buffer.py|__add_item_to_db|line:306|DEBUG| 
+                -------------- item 批量入库 --------------
+                表名: spider_update
+                datas: [
+                {
+                                "url": "https://udn.com/search/tagging/2/%E5%AD%9F%E6%99%9A%E8%88%9F",
+                                "title": "孟晚舟| 搜尋標籤 - 聯合新聞網",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "搜尋｛孟晚舟｝共找到175篇新聞。udn.com 提供即時新聞以及豐富的政治、社會、地方、兩岸、國際、財經、數位、運動、NBA、娛樂、生活、健康、旅遊新聞，以最即時、多元 ..."
+                },
+                {
+                                "url": "https://baike.baidu.com/item/%E5%AD%9F%E6%99%9A%E8%88%9F/131792",
+                                "title": "孟晚舟_百度百科",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "孟晚舟，汉族，1972年出生于四川，任正非之女，中国香港永久居民，深圳大学会计系毕业，华中理工大学（现华中科技大学）管理学硕士。历任公司财务部门的几个高级职位， ... 毕业院校: 深圳大学、华中理工大学 出生日期: 1972年 出生地: 四川 公司职务: 担任华为公司常务董事、CFO"
+                },
+                {
+                                "url": "https://www.ntdtv.com/b5/%E5%AD%9F%E6%99%9A%E8%88%9F.htm",
+                                "title": "孟晚舟| 新唐人中文電視台在線",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "孟晚舟. 中國新聞簡訊：疫情攻入新疆兵團中共十一急電洩備戰突發疫情 ... 華為首席財務官孟晚舟從加拿大獲釋回國，北京幾乎在同一時間釋放了兩名加拿大人。"
+                },
+                {
+                                "url": "https://www.cw.com.tw/tag/%E5%AD%9F%E6%99%9A%E8%88%9F",
+                                "title": "孟晚舟 - 天下雜誌",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "華為公主孟晚舟終於回到中國，這對中美關係的意義是什麼？美股9月份向來是跌多漲少，最新消息是，參議院共和黨人阻擋了避免政府停擺和延緩舉債上限的法案。"
+                },
+                {
+                                "url": "https://www.mirrormedia.mg/tag/5c088c0f315ec510009014b3/",
+                                "title": "孟晚舟- 鏡週刊Mirror Media",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "中國科技公司華為創辦人任正非的長女孟晚舟，同時也是華為現任副董事長，2018年12月被美國指控涉嫌「詐欺」和違反美國制裁措施，在加拿大轉機時被逮捕，隨後美國要求引渡， ..."
+                },
+                {
+                                "url": "https://newtalk.tw/news/view/2021-10-12/649714",
+                                "title": "對孟晚舟案極度不滿！逾75％加拿大人贊成封殺華為5G | 科技",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "2 天前 · 外媒指出，對華為的不滿激增，反映出民眾自2018年底以來累積的憤怒。當時加拿大根據美國的引渡請求逮捕了華為首席財務官孟晚舟，中國隨即也逮捕了2名 ..."
+                },
+                {
+                                "url": "https://cn.wsj.com/articles/%E7%BE%8E%E5%9C%8B%E5%8F%B8%E6%B3%95%E9%83%A8%E8%88%87%E8%8F%AF%E7%82%BAcfo%E5%AD%9F%E6%99%9A%E8%88%9F%E9%81%94%E6%88%90%E5%8D%94%E8%AD%B0-11632530405",
+                                "title": "華為CFO孟晚舟與美國司法部達成協議，獲釋返回中國",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": "2021年10月6日",
+                                "text": "2021年10月6日 · 在加拿大代表美國扣押華為首席財務官孟晚舟近三年後，美國司法部同意她回到中國的家中，由此消除了中美關係惡化的一個刺激因素。"
+                },
+                {
+                                "url": "https://www.storm.mg/category/k148768",
+                                "title": "孟晚舟 - 風傳媒",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "華爾街日報》孟晚舟回家了，但美國仍在持續狙擊華為：新手機拿不出5G版本，銷量滑落全球第九位2021-10-11 11:00:01風評：從脫鉤到「再掛鈎」，中美尋新均衡台灣勿 ..."
+                },
+                {
+                                "url": "https://tw.aboluowang.com/tag/%E5%AD%9F%E6%99%9A%E8%88%9F-1.html",
+                                "title": "最新孟晚舟現況＊ 阿波羅新聞網",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "孟晚舟悄無聲息了網友評論：華為差不多要倒下了(圖)|對孟晚舟案極度不滿！逾75％加拿大人贊成封殺華為5G(圖)|燕梳財經：董小姐的「超能力」，葉大媽的嘴（圖）|慶祝孟 ..."
+                },
+                {
+                                "url": "https://www.upmedia.mg/news_info.php?SerialNo=125672",
+                                "title": "孟晚舟實為「污點證人」 華為等於被釘死了",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": "2021年9月30日",
+                                "text": "2021年9月30日 · 9月25日晚，中共派出專機接孟晚舟女士特別繞道北極一大圈飛到深圳。在高調進行愛國宣傳鼓動下，億萬人「網..."
+                }
+]
+                    
+Thread-2|2021-10-14 20:51:51,940|mongo_pipeline.py|save_items|line:44|INFO| 共导出 10 条数据到 spider_update,  新增 10条, 重复 0 条
+Thread-3|2021-10-14 20:51:55,087|request.py|get_response|line:328|DEBUG| 
                 -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.cd/search?q=孟晚舟&start=10
+                url  = https://www.google.bg/search?q=孟晚舟&start=20
                 method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.16) Gecko/20101130 Firefox/3.5.16 GTB7.1', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
+                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.16) Gecko/20101130 Firefox/3.5.16 GTB7.1', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
                 
-Thread-3|2021-10-14 14:46:11,316|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.com.et/search?q=孟晚舟&start=10",
-                            "retry_times": 1,
-                            "parser_name": "GoogleCurl",
-                            "filter_repeat": false,
-                            "page": 10,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.16) Gecko/20101130 Firefox/3.5.16 GTB7.1",
-                                                        "Connection": "close"
-                            },
-                            "error_msg": "Exception: 请求错误!",
-                            "response": "<Response [429]>"
-}
-                                
-Thread-3|2021-10-14 14:46:11,318|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.com.et/search?q=孟晚舟&start=10
-                                        重试次数 2
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:46:16,320|request.py|get_response|line:328|DEBUG| 
-                -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.cv/search?q=孟晚舟&start=20
-                method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.0; pl; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 GTB7.1 ( .NET CLR 3.5.30729)', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
-                
-Thread-3|2021-10-14 14:46:17,995|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.me/search?q=孟晚舟&start=20",
-                            "retry_times": 1,
-                            "parser_name": "GoogleCurl",
-                            "filter_repeat": false,
-                            "page": 20,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.0; pl; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 GTB7.1 ( .NET CLR 3.5.30729)",
-                                                        "Connection": "close"
-                            },
-                            "error_msg": "Exception: 请求错误!",
-                            "response": "<Response [429]>"
-}
-                                
-Thread-3|2021-10-14 14:46:17,996|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.me/search?q=孟晚舟&start=20
-                                        重试次数 2
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:46:24,007|request.py|get_response|line:328|DEBUG| 
-                -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.lu/search?q=孟晚舟&start=0
-                method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; zh-CN; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
-                
-Thread-3|2021-10-14 14:46:25,323|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.com.ec/search?q=孟晚舟&start=0",
-                            "retry_times": 2,
-                            "parser_name": "GoogleCurl",
-                            "filter_repeat": false,
-                            "page": 0,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; zh-CN; rv:1.9.2.14) Gecko/20110218 Firefox/3.6.14",
-                                                        "Connection": "close"
-                            },
-                            "error_msg": "Exception: 请求错误!",
-                            "response": "<Response [429]>"
-}
-                                
-Thread-3|2021-10-14 14:46:25,323|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.com.ec/search?q=孟晚舟&start=0
-                                        重试次数 3
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:46:32,326|request.py|get_response|line:328|DEBUG| 
-                -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.com.et/search?q=孟晚舟&start=10
-                method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-GB; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8 ( .NET CLR 3.5.30729; .NET4.0C)', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
-                
-Thread-3|2021-10-14 14:46:33,723|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.dk/search?q=孟晚舟&start=10",
-                            "retry_times": 2,
-                            "parser_name": "GoogleCurl",
-                            "filter_repeat": false,
-                            "page": 10,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-GB; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8 ( .NET CLR 3.5.30729; .NET4.0C)",
-                                                        "Connection": "close"
-                            },
-                            "error_msg": "Exception: 请求错误!",
-                            "response": "<Response [429]>"
-}
-                                
-Thread-3|2021-10-14 14:46:33,724|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.dk/search?q=孟晚舟&start=10
-                                        重试次数 3
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:46:36,738|request.py|get_response|line:328|DEBUG| 
-                -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.me/search?q=孟晚舟&start=20
-                method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; ru-RU; rv:1.9.2) Gecko/20100105 MRA 5.6 (build 03278) Firefox/3.6 (.NET CLR 3.5.30729)', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
-                
-Thread-3|2021-10-14 14:46:39,703|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.co.bw/search?q=孟晚舟&start=20",
-                            "retry_times": 2,
-                            "parser_name": "GoogleCurl",
-                            "filter_repeat": false,
-                            "page": 20,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; ru-RU; rv:1.9.2) Gecko/20100105 MRA 5.6 (build 03278) Firefox/3.6 (.NET CLR 3.5.30729)",
-                                                        "Connection": "close"
-                            },
-                            "error_msg": "Exception: 请求错误!",
-                            "response": "<Response [429]>"
-}
-                                
-Thread-3|2021-10-14 14:46:39,703|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.co.bw/search?q=孟晚舟&start=20
-                                        重试次数 3
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:46:44,724|request.py|get_response|line:328|DEBUG| 
-                -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.com.ec/search?q=孟晚舟&start=0
-                method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.16) Gecko/20101130 Firefox/3.5.16 GTB7.1', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
-                
-Thread-3|2021-10-14 14:46:46,209|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.gy/search?q=孟晚舟&start=0",
-                            "retry_times": 3,
-                            "parser_name": "GoogleCurl",
-                            "filter_repeat": false,
-                            "page": 0,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.16) Gecko/20101130 Firefox/3.5.16 GTB7.1",
-                                                        "Connection": "close"
-                            },
-                            "error_msg": "Exception: 请求错误!",
-                            "response": "<Response [429]>"
-}
-                                
-Thread-3|2021-10-14 14:46:46,210|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.gy/search?q=孟晚舟&start=0
-                                        重试次数 4
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:46:46,211|request.py|get_response|line:328|DEBUG| 
-                -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.dk/search?q=孟晚舟&start=10
-                method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.3pre) Gecko/20100405 Firefox/3.6.3plugin1 ( .NET CLR 3.5.30729)', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
-                
-Thread-3|2021-10-14 14:46:47,653|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.is/search?q=孟晚舟&start=10",
-                            "retry_times": 3,
-                            "parser_name": "GoogleCurl",
-                            "filter_repeat": false,
-                            "page": 10,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.3pre) Gecko/20100405 Firefox/3.6.3plugin1 ( .NET CLR 3.5.30729)",
-                                                        "Connection": "close"
-                            },
-                            "error_msg": "Exception: 请求错误!",
-                            "response": "<Response [429]>"
-}
-                                
-Thread-3|2021-10-14 14:46:47,654|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.is/search?q=孟晚舟&start=10
-                                        重试次数 4
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:46:54,659|request.py|get_response|line:328|DEBUG| 
-                -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.co.bw/search?q=孟晚舟&start=20
-                method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; ru; rv:1.9.2b5) Gecko/20091204 Firefox/3.6b5', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
-                
-Thread-3|2021-10-14 14:46:58,728|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.si/search?q=孟晚舟&start=20",
-                            "retry_times": 3,
-                            "parser_name": "GoogleCurl",
-                            "filter_repeat": false,
-                            "page": 20,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; ru; rv:1.9.2b5) Gecko/20091204 Firefox/3.6b5",
-                                                        "Connection": "close"
-                            },
-                            "error_msg": "Exception: 请求错误!",
-                            "response": "<Response [429]>"
-}
-                                
-Thread-3|2021-10-14 14:46:58,729|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.si/search?q=孟晚舟&start=20
-                                        重试次数 4
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:47:06,743|request.py|get_response|line:328|DEBUG| 
-                -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.gy/search?q=孟晚舟&start=0
-                method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; rv:1.9) Gecko/20100101 Firefox/4.0', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
-                
-Thread-3|2021-10-14 14:47:08,284|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.dm/search?q=孟晚舟&start=0",
-                            "retry_times": 4,
-                            "parser_name": "GoogleCurl",
-                            "filter_repeat": false,
-                            "page": 0,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; rv:1.9) Gecko/20100101 Firefox/4.0",
-                                                        "Connection": "close"
-                            },
-                            "error_msg": "Exception: 请求错误!",
-                            "response": "<Response [429]>"
-}
-                                
-Thread-3|2021-10-14 14:47:08,285|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.dm/search?q=孟晚舟&start=0
-                                        重试次数 5
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:47:18,301|request.py|get_response|line:328|DEBUG| 
-                -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.is/search?q=孟晚舟&start=10
-                method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.15) Gecko/20110303 Firefox/3.6.15 (.NET CLR 3.5.30729)', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
-                
-Thread-3|2021-10-14 14:47:21,200|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.com.sv/search?q=孟晚舟&start=10",
-                            "retry_times": 4,
-                            "parser_name": "GoogleCurl",
-                            "filter_repeat": false,
-                            "page": 10,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.15) Gecko/20110303 Firefox/3.6.15 (.NET CLR 3.5.30729)",
-                                                        "Connection": "close"
-                            },
-                            "error_msg": "Exception: 请求错误!",
-                            "response": "<Response [429]>"
-}
-                                
-Thread-3|2021-10-14 14:47:21,201|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.com.sv/search?q=孟晚舟&start=10
-                                        重试次数 5
-                                        最大允许重试次数 100
-Thread-3|2021-10-14 14:47:29,212|request.py|get_response|line:328|DEBUG| 
-                -------------- GoogleCurl.parse request for ----------------
-                url  = https://www.google.si/search?q=孟晚舟&start=20
-                method = GET
-                body = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; hu; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 GTB7.1', 'Connection': 'close'}, 'timeout': 22, 'stream': True, 'verify': False}
-                
-Thread-3|2021-10-14 14:47:30,673|parser_control.py|deal_requests|line:624|ERROR| 
-                                -------------- GoogleCurl.parse error -------------
-                                error          请求错误!
-                                response       <Response [429]>
-                                deal request   {
-                            "url": "https://www.google.com.bd/search?q=孟晚舟&start=20",
-                            "retry_times": 4,
-                            "parser_name": "GoogleCurl",
-                            "filter_repeat": false,
-                            "page": 20,
-                            "headers": {
-                                                        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; hu; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 GTB7.1",
-                                                        "Connection": "close"
-                            },
-                            "error_msg": "Exception: 请求错误!",
-                            "response": "<Response [429]>"
-}
-                                
-Thread-3|2021-10-14 14:47:30,674|parser_control.py|deal_requests|line:687|INFO| 
-                                        入库 等待重试
-                                        url     https://www.google.com.bd/search?q=孟晚舟&start=20
-                                        重试次数 5
-                                        最大允许重试次数 100
+Thread-2|2021-10-14 20:51:55,965|item_buffer.py|__add_item_to_db|line:306|DEBUG| 
+                -------------- item 批量入库 --------------
+                表名: spider_update
+                datas: [
+                {
+                                "url": "https://player.soundon.fm/p/1f819afa-037f-450f-94f7-404eddc9c810/episodes/8dcadd7c-9e4b-4e8d-a20d-987d356822f0",
+                                "title": "人質外交傷中國聲譽孟晚舟案難逆轉美中對立- 一起聽世界| SoundOn",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "9 小時前 · 中國電信大廠華為公司財務長孟晚舟日前與美國達成協議，讓她得以離開加拿大返回中國，而遭中國關押的兩名加拿大人也隨即獲釋返國。"
+                },
+                {
+                                "url": "https://ec.ltn.com.tw/article/breakingnews/3689974",
+                                "title": "中國究竟是贏是輸？ 外媒曝孟晚舟「投敵變節」真相 - 自由財經",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": "2021年10月1日",
+                                "text": "2021年10月1日 · 有專家認為，美方順利獲得孟晚舟陳述的價值，同時避免加拿大在與中國雙邊對抗時承受的壓力，已取得實質上的勝利，未來司法部對華為採取行動時，將持有更多 ..."
+                },
+                {
+                                "url": "https://www.ettoday.net/news/20211013/2100127.htm",
+                                "title": "陸副外長透露：習近平通話拜登時要求妥善解決「孟晚舟事件」",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "1 天前 · 大陸外交部副部長樂玉成11日接受大陸官媒採訪時表示，孟晚舟被拘押的3年裡，共產黨和政府時刻牽掛，習近平更是親自關心，於中美元首通話時，明確要求 ..."
+                },
+                {
+                                "url": "https://www.bannedbook.org/bnews/zh-tw/cbnews/20201217/1449671.html",
+                                "title": "孟晚舟此舉定格了她的命運- 禁聞網",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": "2020年12月17日",
+                                "text": "2020年12月17日 · 拿著香港身份的孟晚舟在2008年2月至2009年4月期間擔任Skycom董事。作為一個掌控著市值數千億的大公司的高層人員，為何要擔任一家不起眼的小公司的 ..."
+                },
+                {
+                                "url": "https://mil.news.sina.com.cn/dgby/2021-10-08/doc-iktzscyx8469919.shtml",
+                                "title": "孟晚舟获释中国给美国“长臂管辖”沉重一击！ - 新浪军事",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "6 天前 · 我没有孟晚舟女士幸运，我的公司和祖国没有给我如此强大的支持。”同为美国政府“长臂管辖”受害者的前法国电力巨头阿尔斯通集团高管、《美国陷阱》一书 ..."
+                },
+                {
+                                "url": "https://www.hk01.com/%E5%8D%B3%E6%99%82%E4%B8%AD%E5%9C%8B/688236/%E5%A4%96%E4%BA%A4%E9%83%A8%E5%89%AF%E9%83%A8%E9%95%B7-%E7%BF%92%E8%BF%91%E5%B9%B3%E6%9B%BE%E6%98%8E%E7%A2%BA%E5%B0%B1%E5%AD%9F%E6%99%9A%E8%88%9F%E4%BA%8B%E4%BB%B6%E8%A6%81%E6%B1%82%E6%8B%9C%E7%99%BB%E5%84%98%E5%BF%AB%E5%A6%A5%E5%96%84%E8%A7%A3%E6%B1%BA",
+                                "title": "外交部副部長：習近平曾明確就孟晚舟事件要求拜登儘快妥善解決",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "1 天前 · 中國外交部副部長樂玉成日前表受中國國際電視台（CGTN）訪問，談到華為副董事長孟晚舟回國一事，他表示黨和政府在孟被扣三年期間時刻牽掛，習近平."
+                },
+                {
+                                "url": "https://www.worldjournal.com/wj/story/121474/5812980",
+                                "title": "中副外長證實：習近平曾要求拜登妥善解決孟晚舟事件",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "1 天前 · 針對華為前財務長孟晚舟受困加拿大近三年，終於在9月25日獲釋返回中國，中國外交部副部長樂玉成透露，中國國家主席習近平對此..."
+                },
+                {
+                                "url": "https://www.master-insight.com/%E5%AD%9F%E6%99%9A%E8%88%9F%E6%A1%88%E7%9A%84%E4%BE%86%E9%BE%8D%E5%8E%BB%E8%84%88/",
+                                "title": "孟晚舟案的來龍去脈|馮應標 - 灼見名家",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "3 天前 · 加美引渡案 何來幕後？ 事後美國司法部負責人指出，孟晚舟雖無認罪（尚未），但她在協議中已坦承對銀行提供 ..."
+                },
+                {
+                                "url": "https://www.cna.com.tw/news/firstnews/202109250013.aspx",
+                                "title": "華為財務長孟晚舟獲釋返回中國加拿大引渡程序終結[影] | 國際 - 中央社",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": "2021年9月25日",
+                                "text": "2021年9月25日 · 加拿大法官今天終結針對華為財務長孟晚舟的引渡程序，下令將她保釋條件解除並釋放她，結束近3年的法律攻防後，孟晚舟已搭機返回中國深圳。"
+                },
+                {
+                                "url": "https://www.secretchina.com/news/b5/2021/10/09/986001.html",
+                                "title": "孟晚舟獲釋幾家歡喜幾家愁？(圖) - 白丁-加拿大- - 時評- 看中國網",
+                                "keyword": "孟晚舟",
+                                "inserted_time": "2021-10-15",
+                                "created_time": null,
+                                "text": "6 天前 · 美國政府強調孟晚舟有條件獲釋完全是出於獨立的司法考量，而批評者則認為中途放棄引渡是在中國壓力之下的讓步。加拿大則比美、中要低調得多，無論政府還是 ..."
+                }
+]
+                    
+Thread-2|2021-10-14 20:51:55,982|mongo_pipeline.py|save_items|line:44|INFO| 共导出 10 条数据到 spider_update,  新增 10条, 重复 0 条
+Thread-3|2021-10-14 20:52:01,920|parser_control.py|run|line:464|DEBUG| parser 等待任务...

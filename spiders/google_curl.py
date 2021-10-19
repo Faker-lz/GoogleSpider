@@ -15,19 +15,30 @@ import cchardet
 from pyquery import PyQuery as pq
 from utils import get_random_user_agent, filter_link, get_domain
 import re
+import time
 
 
 class GoogleCurl(feapder.AirSpider):
-    def __init__(self, query: str = '', page_range: int = 3):
+    def __init__(self, query_list: list, page_range: int = 3):
         self.page_range = page_range
         self.url = "https://{domain}/search?q={query}&start={start}"
-        self.query = query
+        self.query_list = query_list
         self.pq_content = None
         super().__init__()
 
     def start_callback(self):
-        db = MongoDB()
-        db.get_collection(MonGO_TABLE).delete_many({'keyword': self.query})
+        """
+        Mark old data
+        """
+        for query in self.query_list:
+            db = MongoDB()
+            db.get_collection(MonGO_TABLE).update_many({
+                'keyword': query,
+            },
+                {'$set': {'flag': 'old'
+                          }
+                 }
+            )
 
     def download_midware(self, request):
         """
@@ -43,10 +54,11 @@ class GoogleCurl(feapder.AirSpider):
                            'Connection': 'close'}
 
     def start_requests(self):
-        for page in range(self.page_range):
-            yield feapder.Request(
-                self.url.format(domain=get_domain(), query=self.query, start=page * 10), page=page*10
-            )
+        for query in self.query_list:
+            for page in range(self.page_range):
+                yield feapder.Request(
+                    self.url.format(domain=get_domain(), query=query, start=page * 10), page=page*10, query=query
+                )
 
     def validate(self, request, response):
         content = response.content
@@ -57,8 +69,11 @@ class GoogleCurl(feapder.AirSpider):
         if 'Mobile' in judge_text:
             raise Exception('非法界面!')
         if response.status_code != 200:
-            request.url = self.url.format(domain=get_domain(), query=self.query, start=request.page)
+            request.url = self.url.format(domain=get_domain(), query=request.query, start=request.page)
             raise Exception('请求错误!')        # 改变Google 服务器地址后重新爬取
+        elif response.status_code == 429:
+            time.sleep(60)                     # 检测到最大连接数,等待1分钟
+
 
     def parse(self, request, response):
         for p in self.pq_content.items('a'):
@@ -75,21 +90,30 @@ class GoogleCurl(feapder.AirSpider):
                         url = filter_link(href)
                         result['url'] = url
                     span = ppa('span').eq(0).text()
-                    judge_date_cn = re.match(r'\d{4}(年|-)\d{1,2}(月|-)\d{1,2}(日|)', span)
-                    judge_date_en = re.match(r'\d{1,2} [a-zA-Z]{3} \d{4}', span)
+                    judge_date = re.match(r'([[a-zA-Z]{3}|\d{1,2}|\d{4}])(年|-|\s)([a-zA-Z]*?'
+                                          r'|\d{1,2})(,*?)(\s|月|-|)(|\d{4}|\d{1,2})(日|ago|)\s', span)
                     url_path = p('div').eq(1).text()
                     text = ppa('div').eq(6).text()
                     text = text.replace(url_path, '').replace('\n', '')
                     result['title'] = head
-                    result['keyword'] = self.query
+                    result['keyword'] = request.query
                     result['inserted_time'] = '2021-10-15'
-                    result['created_time'] = span if judge_date_cn or judge_date_en else None
+                    result['created_time'] = span if judge_date else None
                     result['text'] = text
+                    result['flag'] = 'new'
                     result_item = Item(**result)
                     result_item.table_name = MonGO_TABLE
                     yield result_item
 
+    def end_callback(self):
+        """
+        delete old data
+        """
+        db = MongoDB()
+        for query in self.query_list:
+            db.get_collection(MonGO_TABLE).delete_many({'keyword': query, 'flag': 'old'})
 
 
 if __name__ == "__main__":
     GoogleCurl('孟晚舟').start()
+    '2021-10-18 21:58:03.065'

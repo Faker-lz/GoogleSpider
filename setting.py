@@ -41,8 +41,8 @@ ITEM_PIPELINES = [
 # COLLECTOR_TASK_COUNT = 10  # 每次获取任务数量
 #
 # # SPIDER
-# SPIDER_THREAD_COUNT = 1  # 爬虫并发数
-SPIDER_SLEEP_TIME = [0, 10]  # 下载时间间隔 单位秒。 支持随机 如 SPIDER_SLEEP_TIME = [2, 5] 则间隔为 2~5秒之间的随机数，包含2和5
+SPIDER_THREAD_COUNT = 1  # 爬虫并发数
+SPIDER_SLEEP_TIME = [5, 15]  # 下载时间间隔 单位秒。 支持随机 如 SPIDER_SLEEP_TIME = [2, 5] 则间隔为 2~5秒之间的随机数，包含2和5
 # SPIDER_TASK_COUNT = 1  # 每个parser从内存队列中获取任务的数量
 # SPIDER_MAX_RETRY_TIMES = 100  # 每个请求最大重试次数
 # KEEP_ALIVE = False  # 爬虫是否常驻
@@ -113,15 +113,15 @@ DOMAIN = 'google.com'
 # EMAIL_SENDER = ""  # 发件人
 # EMAIL_PASSWORD = ""  # 授权码
 # EMAIL_RECEIVER = ""  # 收件人 支持列表，可指定多个
-# EMAIL_SMTPSERVER = "smtp.163.com" # 邮件服务器 默认为163邮箱
+# EMAIL_SMTPSERVER = "" # 邮件服务器 默认为163邮箱
 # # 企业微信报警
 # WECHAT_WARNING_URL = ""  # 企业微信机器人api
 # WECHAT_WARNING_PHONE = ""  # 报警人 将会在群内@此人, 支持列表，可指定多人
 # WECHAT_WARNING_ALL = False  # 是否提示所有人， 默认为False
 # # 时间间隔
 # WARNING_INTERVAL = 3600  # 相同报警的报警时间间隔，防止刷屏; 0表示不去重
-# WARNING_LEVEL = "DEBUG"  # 报警级别， DEBUG / ERROR
-# WARNING_FAILED_COUNT = 1000  # 任务失败数 超过WARNING_FAILED_COUNT则报警
+# WARNING_LEVEL = "ERROR"  # 报警级别， DEBUG / ERROR
+# WARNING_FAILED_COUNT = 50  # 任务失败数 超过WARNING_FAILED_COUNT则报警
 #
 
 LOG_NAME = os.path.basename(os.getcwd())
@@ -131,7 +131,7 @@ LOG_COLOR = True  # 是否带有颜色
 LOG_IS_WRITE_TO_CONSOLE = True # 是否打印到控制台
 LOG_IS_WRITE_TO_FILE = True  # 是否写文件
 LOG_MODE = "w"  # 写文件的模式
-LOG_MAX_BYTES = 10 * 1024 * 1024  # 每个日志文件的最大字节数
+LOG_MAX_BYTES = 1024 * 1024 * 1024  # 每个日志文件的最大字节数
 LOG_BACKUP_COUNT = 20  # 日志文件保留数量
 LOG_ENCODING = "utf8"  # 日志文件编码
 OTHERS_LOG_LEVAL = "ERROR"  # 第三方库的log等级
