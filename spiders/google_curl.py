@@ -16,6 +16,7 @@ from pyquery import PyQuery as pq
 from utils import get_random_user_agent, filter_link, get_domain
 import re
 import time
+import datetime
 
 
 class GoogleCurl(feapder.AirSpider):
@@ -97,7 +98,7 @@ class GoogleCurl(feapder.AirSpider):
                     text = text.replace(url_path, '').replace('\n', '')
                     result['title'] = head
                     result['keyword'] = request.query
-                    result['inserted_time'] = '2021-10-15'
+                    result['inserted_time'] = datetime.datetime.now()
                     result['created_time'] = span if judge_date else None
                     result['text'] = text
                     result['flag'] = 'new'
@@ -115,5 +116,6 @@ class GoogleCurl(feapder.AirSpider):
 
 
 if __name__ == "__main__":
-    GoogleCurl('孟晚舟').start()
-    '2021-10-18 21:58:03.065'
+    keywords = ['Trump', 'Biden', 'NLP']
+    spider = GoogleCurl(keywords, 3)
+    spider.start()

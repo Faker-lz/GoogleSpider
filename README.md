@@ -43,7 +43,7 @@ OTHERS_LOG_LEVAL = "ERROR"  # leval
 * Download interval
 
   * ```python
-    SPIDER_SLEEP_TIME = [0, 1]
+    SPIDER_SLEEP_TIME = [5, 15]
     ```
 
 * Maximum number of requests (100 by default)
@@ -60,26 +60,30 @@ OTHERS_LOG_LEVAL = "ERROR"  # leval
 
 ## data structure
 
-| key     | value type | example                                                      |
-| ------- | ---------- | ------------------------------------------------------------ |
-| title   | str        | “Donald Trump - Wikipedia”                                   |
-| keyword | str        | “Trump"                                                      |
-| url     | str        | "https://en.wikipedia.org/wiki/Donald_Trump"                 |
-| text    | str        | Donald Trump - Wikipedia 1 hour ago · Donald John Trump (born June 14, 1946) is an American politician, media personality, and businessman who served as the 45th president of the United States ... Vice President: Mike Pence In office January 20, 2017 – January 20, 2021: In office; January 20, 2017 – January 20, 2021 Occupation: Politician; businessman; television presenter Parents: Fred Trump; Mary Anne MacLeod" |
+| key           | value type | describe                        | example                                                      |
+| ------------- | ---------- | ------------------------------- | ------------------------------------------------------------ |
+| title         | str        | title                           | “Donald Trump - Wikipedia”                                   |
+| keyword       | str        | searching keyword               | “Trump"                                                      |
+| url           | str        | url                             | "https://en.wikipedia.org/wiki/Donald_Trump"                 |
+| text          | str        | content                         | Donald Trump - Wikipedia 1 hour ago · Donald John Trump (born June 14, 1946) is an American politician, media personality, and businessman who served as the 45th president of the United States ... Vice President: Mike Pence In office January 20, 2017 – January 20, 2021: In office; January 20, 2017 – January 20, 2021 Occupation: Politician; businessman; television presenter Parents: Fred Trump; Mary Anne MacLeod" |
+| inserted_time | str        | The data is stored at the time  | '2021-10-19 10:27:08.105224'                                 |
+| created_time  | str        | The data is created at the time | 'Aug 17, 2021', '13 hours ago', '2020-03-26', '2020年09月6日' |
+| flag          | str        | To mark data                    | 'new','old'                                                  |
 
 
 
 ## Quick start
 
-Crawl the `3` page data with the keyword `Trump`
+Crawl the `3` page data with the keywords list.
 
 ```python
 from spiders.google_curl import GoogleCurl
 
-spider = GoogleCurl('Trump', 3)
+keywords = ['Trump', 'Biden', 'NLP']
+spider = GoogleCurl(keywords, 3)
 spider.start()
 
 ```
 
-* The first parameter is the search keyword, and the second parameter is the number of pages crawled
+* The first parameter is the search keywords list, and the second parameter is the number of pages crawled
 
