@@ -75,7 +75,6 @@ class GoogleCurl(feapder.AirSpider):
         elif response.status_code == 429:
             time.sleep(60)                     # 检测到最大连接数,等待1分钟
 
-
     def parse(self, request, response):
         for p in self.pq_content.items('a'):
             if p.attr('href').startswith('/url?q='):
@@ -98,24 +97,23 @@ class GoogleCurl(feapder.AirSpider):
                     text = text.replace(url_path, '').replace('\n', '')
                     result['title'] = head
                     result['keyword'] = request.query
-                    result['inserted_time'] = datetime.datetime.now()
+                    result['inserted_time'] = str(datetime.datetime.now())
                     result['created_time'] = span if judge_date else None
                     result['text'] = text
                     result['flag'] = 'new'
                     result_item = Item(**result)
                     result_item.table_name = MonGO_TABLE
                     yield result_item
+        if request.page == (self.page_range-1) * 10:        #"该词条数据爬取完毕,删除旧数据"
+            db = MongoDB()
+            db.get_collection(MonGO_TABLE).delete_many({'keyword': request.query, 'flag': 'old'})
 
-    def end_callback(self):
-        """
-        delete old data
-        """
-        db = MongoDB()
-        for query in self.query_list:
-            db.get_collection(MonGO_TABLE).delete_many({'keyword': query, 'flag': 'old'})
+
+def google_spider(keywords: list):
+    spider = GoogleCurl(keywords, 3)
+    spider.start()
 
 
 if __name__ == "__main__":
     keywords = ['Trump', 'Biden', 'NLP']
-    spider = GoogleCurl(keywords, 3)
-    spider.start()
+    google_spider(keywords)

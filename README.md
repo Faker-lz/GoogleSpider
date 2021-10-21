@@ -77,13 +77,10 @@ OTHERS_LOG_LEVAL = "ERROR"  # leval
 Crawl the `3` page data with the keywords list.
 
 ```python
-from spiders.google_curl import GoogleCurl
+from spiders.google_curl import google_spider
 
 keywords = ['Trump', 'Biden', 'NLP']
-spider = GoogleCurl(keywords, 3)
-spider.start()
+google_spider（keywords）
 
 ```
-
-* The first parameter is the search keywords list, and the second parameter is the number of pages crawled
 
